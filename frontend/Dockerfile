@@ -22,4 +22,4 @@ FROM nginx:alpine
 COPY --from=builder /app/build /usr/share/nginx/html
 EXPOSE 80
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-CMD ["nginx", "-g", "deamon off;"]
+CMD ["nginx", "-g", "daemon off;"]
