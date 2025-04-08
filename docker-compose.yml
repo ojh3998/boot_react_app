@@ -1,11 +1,14 @@
 services:
   backend:
     container_name: backend-container
-    build: ./backend
+    build:
+      context: ./backend
+      args:
+        - SPRING_API_KEY: ${SPRING_API_KEY}
     ports:
       - "8080:8080"
-    environment:
-      SPRING_API_KEY: ${SPRING_API_KEY}
+#    environment:
+#      SPRING_API_KEY: ${SPRING_API_KEY}
   frontend:
     container_name: front-container
     build: 
